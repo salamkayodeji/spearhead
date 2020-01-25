@@ -138,15 +138,15 @@ STATIC_URL = '/static/'
 
 if DEBUG:
     MEDIA_URL = '/media/'
-    STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static-only")
-    MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
+    STATIC_ROOT = os.path.join(BASE_DIR, "static", "static-only")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
     STATICFILES_DIRS = (
-        os.path.join(os.path.dirname(BASE_DIR), "static", "static"),
+        os.path.join(BASE_DIR, "static", "static"),
     )
 
-LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'dashboard'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_URL = 'dash:login'
+LOGIN_REDIRECT_URL = 'dash:Home'
+LOGOUT_REDIRECT_URL = 'dash:Home'
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'salamkayodeji@gmail.com'

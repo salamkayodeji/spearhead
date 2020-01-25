@@ -26,17 +26,17 @@
                 <li data-transition="slideup" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                     <img src="{% static "img/slides/2.jpg" %}" alt="slider-image" />
                     <div class="tp-caption sfl title-slide center" data-x="379" data-y="245" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
-                        Welcome To GOVLINK Solutions
+                        Welcome To SPEARHEAD Solutions
                     </div>  
                     <div class="tp-caption sfr desc-slide center" data-x="306" data-y="322" data-speed="1000" data-start="1500" data-easing="Power3.easeInOut">                       
-                       GOVLINK are specialists in skills development and training for individuals and teams across all types of organisations,</br> large and small, public and private, domestic and international.
+                       SPEARHEAD are specialists in skills development and training for individuals and teams across all types of organisations,</br> large and small, public and private, domestic and international.
                     </div>                            
                 </li>
 
                 <li data-transition="random-static" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                     <img src="{% static "img/slides/3.jpg" %}" alt="slider-image" />
 
-                    <div class="tp-caption sfb title-slide color-white center style2" data-x="315" data-y="285" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">Welcome To GOVLINK</div>
+                    <div class="tp-caption sfb title-slide color-white center style2" data-x="315" data-y="285" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">Welcome To SPEARHEAD</div>
 
                     <div class="tp-caption sft desc-slide color-white center" data-x="387" data-y="370" data-speed="1000" data-start="1500" data-easing="Power3.easeInOut"></div>
 
@@ -167,7 +167,7 @@
             {% for Category in Category  %}
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="flat-courses style1">
-                        <div class="courses-thumbnail">
+                        <div class="courses-thumbnail" class = "img-fluid" style="width:300px;height:300px">
                             {%if Category.logo%}
                             <a href="{% url 'govlink:courselist' slug=Category.slug %}"><img src="{{ Category.logo.url }}"  alt="image" style="width:300px;height:200px"></a>
                             {%endif%}
@@ -181,22 +181,8 @@
                         <div class="courses-content">
                             <a href="{% url 'govlink:courselist' slug=Category.slug %}"><h6 class="courses-topic">{{Category.category}}</h6></a>
                         </div>
-                        <ul class="courses-meta">
-                            <li class="courses-author"><a href="#">Michael Windzor</a></li>
-                            <li class="courses-follow"><a href="#">100</a></li>
-                            <li class="courses-comment"><a href="#">5</a></li>
-                        </ul>
-                        <div class="courses-price">
-                            <ul class="review-rating">
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                                <li><a href="#"><i class="fa fa-star"></i></a></li>
-                            </ul>
-                            <p>{{post.amount}}</p>
-                        </div>
-                    </div><!-- /.flat-courses -->
+                        
+                         </div><!-- /.flat-courses -->
                 </div><!-- /.col-md-3 -->
 {%endfor%}
                 
@@ -210,7 +196,7 @@
                 {%for gallery in gallery %}
             <div class="item">
                 
-                <a class="popup-gallery" href="images/portfolio/3.1.jpg"><img src="{{ gallery.pic.url }}" alt="image"></a>
+                <a class="popup-gallery" href="{{ gallery.pic.url }}"><img src="{{ gallery.pic.url }}" alt="image"></a>
             </div>
             {%endfor%}
         </div><!-- /.flat-gallery-carousel -->
@@ -359,7 +345,7 @@
                                 <div class="date">{{ event.day }}</div>
                                 <div class="month">{{ event.month }}</div>
                             </div>
-                            <div class="hours"><p>9:00am - 5:00pm</p></div>
+                            <div class="hours"><p>9:00am - 5:00pm</p><p>1 week</p></div>
                         </div><!-- /.time-event -->
 
                         <div class="event-wrapper">
@@ -380,7 +366,7 @@
         </div><!-- /.container -->
     </section>
     <div class="view-event" style="background-color: #000; text-align: center;">
-        <a href="#">View all event</a>
+        <a href="#">EVENTS</a>
     </div>
 
    

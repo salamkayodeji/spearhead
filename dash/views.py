@@ -107,6 +107,7 @@ class CategoryDetail(DetailView):
     #context = { "results": results,
    #     "form": form}
    # return render(request, template_name, context)  
+@login_required
 
 def postemail(request, pk):
     obj = Post.objects.get(id=pk)
@@ -132,6 +133,7 @@ def postemail(request, pk):
     }
     template = "dash/send_email.html"
     return render(request, template, context)
+@login_required
 
 def categoryemail(request, slug):
     obj = Category.objects.get(slug=slug)

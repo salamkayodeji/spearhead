@@ -24,24 +24,21 @@ from django.conf import settings
   #  template_name = 'govlink/home.html'
    # context_object_name= 'event'
 class Home(ListView):
-    context_object_name = 'event'    
+    context_object_name = 'Category'    
     template_name = 'govlink/home.html'
-    queryset = event.objects.all()
+    queryset = Category.objects.filter(popular='1')
 
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        context['Category'] = Category.objects.filter(popular='1')
+        context['event'] = event.objects.all()
         context['gallery'] = Gallery.objects.all()
         # And so on for more models
         return context
 
     
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context ['filter'] = Categoryfilter(self.request.GET, queryset=self.get_queryset())
-        return context
+    
     
     
 
