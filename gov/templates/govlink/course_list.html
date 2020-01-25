@@ -1,0 +1,77 @@
+{% extends "govlink/base.html" %}
+{% load static %}
+{% block content %}
+
+ <!-- Page title -->
+    <div class="page-title parallax parallax1">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                    
+                    <div class="page-title-heading">
+                        <h1 class="title">{{ post.coursecategory }}</h1>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="{ url 'govlink:home' }">Home</a></li>
+                                <li>All Course</li>
+                            </ul>                   
+                        </div>
+                    </div><!-- /.page-title-captions --> 
+                    
+                </div><!-- /.col-md-12 -->  
+            </div><!-- /.row -->  
+        </div><!-- /.container -->                      
+    </div><!-- /.page-title -->
+
+    <!-- Flat courses list -->
+    <section class="flat-row pad-top50px pad-bottom50px">
+    
+        <div class="container">
+            <div class="row">
+{% for post in post %}
+<span class="border border-secondary">
+
+                <div class="col-md-12">
+                    <div class="course-list">
+                        <ul>
+                            <li>
+                                <div class="thumb">
+                                    {%if post.img%}
+                                    <a href="{% url 'govlink:coursedetail' pk=post.pk %}"img src="{{ post.img.url }}" alt="image"></a>
+                                {%endif%}
+                                </div>
+                                <div class="list-content">
+                                    <div class="courses-content">
+                                        <h6 class="courses-topic"><a href="{% url 'govlink:coursedetail' pk=post.pk %}">{{ post.coursename }}</a></h6>
+                                    </div>
+
+                                    <ul class="courses-meta">
+                                        {% if post.author %}
+
+                                        <li class="courses-author"><a href="#">{{ post.author }}</a></li>
+                                        {%else%}
+                                        <li class="courses-author"><a href="#">SPEARHEAD</a></li>
+                                        {%endif%}
+                                    </ul>
+                                    
+                                    <div class="content">
+                                        <p>{{post.date_1}}--{{post.date_2}} || {{post.date_3}}--{{post.date_4}}  </p>
+                                    </div>
+                                    <div class="price"><p>{{ post.amount }}</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <hr>
+                </div><!-- /.col-md-12 -->
+                </div>
+            </span>
+                {% endfor %}
+
+            </div><!-- /.row -->
+
+            
+        </div><!-- /.container -->
+    </section><!-- /.flat-row -->
+   
+
+{% endblock  %}

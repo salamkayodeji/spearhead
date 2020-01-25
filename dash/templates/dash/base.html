@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}SPEARHEAD ADMIN{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'adminstat/css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'adminstat/css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <nav>
+        <h2>&#x1f451 Bloggest</h2>
+        {% if user.is_authenticated %}
+            <p><a href="{% url 'dash:logout'%}">&#128274 Logout</a></p>
+        {% else %}
+            <p><a href="{% url 'dash:login' %}">&#128275 Login</a></p>
+        {% endif %}
+    </nav>
+
+    <section class="content-wrapper">
+        <div class="breadcrumb">
+            <p>{% block breadcrumb %}<a href="{% url 'dash:Home' %}">Home</a>{% endblock %}</p>
+        </div>
+        
+        {% block content %}
+
+        {% endblock %}
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% extends 'dash/base.html' %}
+
+{% block breadcrumb %}{{ block.super }} > Admin{% endblock %}
+
+{% block content %}
+
+    <div class="blog-table">
+        <h2><a href="{% url 'admin:index' %}">&#9997 New Post</a></h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for post in post %}
+            
+            <tr>
+                <td><a href="#">{{ post.coursename }}</a></td>
+                <td><a href="#">{{ post.amount }}</a></td>
+                <td><a href="{% url 'dash:post_update' post.pk %}">&#9998 SEND</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+                    
+    </div>
+
+    {% include 'dash/pagination_links.html' %}
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "govlink/base.html" %}
+{% block content  %}
+{% load static %}
+<!-- Portfolio v1 -->
+
+   <div class="page-title parallax parallax1">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">                    
+                    <div class="page-title-heading">
+                        <h1 class="title">Our Gallery</h1>
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="index-2.html">Home</a></li>
+                                <li>All Course 2</li>
+                            </ul>                   
+                        </div>
+                    </div><!-- /.page-title-captions --> 
+                    
+                </div><!-- /.col-md-12 -->  
+            </div><!-- /.row -->  
+        </div><!-- /.container -->                      
+    </div><!-- /.page-title --> 
+
+    <!-- Portfolio v1 -->
+    <div class="row">
+        <div class="col-md-12">
+      
+          <div id="mdb-lightbox-ui"></div>
+          {% for gallery in gallery %}
+
+          <div class="mdb-lightbox">
+      
+            <figure class="col-md-4">
+              <a href="{{ gallery.pic.url }}" data-size="1600x1067">
+                <img alt="picture" src="{{ gallery.pic.url }}" class="img-fluid" style="width:300px;height:300px">
+              </a>
+            </figure>
+      
+           
+          </div>
+      {%endfor%}
+        </div>
+      </div>
+   
+{%endblock%}
+{%load static%}
+// MDB Lightbox Init
+$(function () {
+$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+});

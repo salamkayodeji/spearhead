@@ -1,0 +1,31 @@
+{% extends 'dash/base.html' %}
+
+{% block breadcrumb %}{{ block.super }} > Admin{% endblock %}
+
+{% block content %}
+
+    <div class="blog-table">
+        <h2><a href="{%url 'dash:category_add' %}">&#9997 New Post</a></h2>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th colspan="2">Actions</th>
+            </tr>
+            {% for category in category  %}
+            
+            <tr>
+                <td><a href="{% url 'dash:post_list' slug=category.slug %}">{{ category.category }}</a></td>
+            </tr>
+            <td>
+                <td><a href="{% url 'dash:category_update' slug=category.slug %}">&#9998 SEND</a></td>
+
+                    
+            </td>
+            {% endfor %}
+        </table>
+                    
+    </div>
+
+    {% include 'dash/pagination_links.html' %}
+
+{% endblock %}

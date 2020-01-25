@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+
+<!-- Mirrored from themesflat.com/html/aquarius/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Sep 2019 12:05:12 GMT -->
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+    <title>SPEARHEAD - Training</title>
+
+    <meta name="author" content="themesflat.com">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Bootstrap  -->
+    <link href="{% static 'css/bootstrap.css'%}" rel="stylesheet">
+    <link href="{% static 'css/flexslider.css'%}" rel="stylesheet">
+
+    <!-- Theme Style -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+    <link href="{% static 'css/icomoon.css'%}" rel="stylesheet">
+
+    <!-- Responsive -->
+    <link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+    
+
+    <!-- Colors -->
+    <link href="{% static 'css/colors/color1.css'%}" rel="stylesheet">
+    
+	
+	<!-- Animation Style -->
+    <link href="{% static 'css/animate.css'%}" rel="stylesheet">
+    <!-- Favicon and touch icons  -->
+    <link href="icon/apple-touch-icon-48-precomposed.png" rel="apple-touch-icon-precomposed" sizes="48x48">
+    <link href="icon/apple-touch-icon-32-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="icon/favicon.png" rel="shortcut icon">
+
+    <!--[if lt IE 9]>
+        <script src="javascript/html5shiv.js"></script>
+        <script src="javascript/respond.min.js"></script>
+    <![endif]-->
+</head>                                 
+<body class="header-sticky">   
+    <div class="loader">
+        <span class="loader1 block-loader"></span>
+        <span class="loader2 block-loader"></span>
+        <span class="loader3 block-loader"></span>
+    </div>
+            {% include 'govlink/navbar.html' %}
+
+    <!-- Boxed -->{% block content %}
+        
+        {% endblock %}
+    
+        {% include 'govlink/footer.html' %}
+
+    <!-- Go Top -->
+    <a class="go-top">
+        <i class="fa fa-angle-up"></i>
+    </a>   
+
+    </div><!-- /.box -->
+    
+
+    <!-- Javascript -->
+    <script src='{% static "js/jquery.min.js" %}'></script>
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script src='{% static "js/jquery.easing.js" %}'></script>
+    <script src='{% static "js/imagesloaded.min.js" %}'></script>
+    <script src='{% static "js/jquery.isotope.min.js" %}'></script>
+    <script src='{% static "js/owl.carousel.js" %}'></script>
+    <script src='{% static "js/jquery-waypoints.js" %}'></script>
+    <script src='{% static "js/jquery.flexslider-min.js" %}'></script>
+    <script src='{% static "js/jquery.magnific-popup.min.js" %}'></script>
+    <script src='{% static "js/jquery.cookie.js" %}'></script>
+    <script src='{% static "js/jquery.fitvids.js" %}'></script>
+    <script src='{% static "js/parallax.js" %}'></script>
+    <script src='{% static "js/switcher.js" %}'></script>
+    <script src='{% static "js/jquery.sticky.js" %}'></script>
+    <script src='{% static "js/smoothscroll.js" %}'></script>
+    <script src='{% static "js/main.js" %}'></script>
+    
+
+    <!-- Revolution Slider -->
+    <script src='{% static "js/jquery.themepunch.tools.min.js" %}'></script>
+    <script src='{% static "js/jquery.themepunch.revolution.min.js" %}'></script>
+    <script src='{% static "js/slider.js" %}'></script>
+    
+</body>
+
+<!-- Mirrored from themesflat.com/html/aquarius/index_3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 11 Sep 2019 12:05:45 GMT -->
+</html>
