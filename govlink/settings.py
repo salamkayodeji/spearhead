@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ubj(9ph_e1q$3#to_1(ybd!^otjd%&e-jqsy$2h$zk9y6ai96y'
+SECRET_KEY = '###############'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'govlink',
-        'USER': 'root',
-        'PASSWORD': 'DNPS1234',
+        'USER': '######',
+        'PASSWORD': '######',
         'HOST': 'localhost',
         'PORT': '3306',
 
@@ -148,10 +148,6 @@ LOGIN_URL = 'dash:login'
 LOGIN_REDIRECT_URL = 'dash:Home'
 LOGOUT_REDIRECT_URL = 'dash:Home'
 
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'salamkayodeji@gmail.com'
-EMAIL_HOST_PASSWORD = 'DNPS1234'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
